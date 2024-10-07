@@ -1,3 +1,9 @@
+# 2024-2 오픈소스 스튜디오 팀 프로젝트
+
+### Simple Service App with React & Open API
+
+민경빈 (22300265) & 민태홍 (22300266)
+<hr>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
