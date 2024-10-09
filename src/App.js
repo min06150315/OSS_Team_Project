@@ -1,22 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import CreateGame from "./Components/Game/CreateGame";
+import ShowGame from "./Components/Game/ShowGame";
+import { Route, Routes } from "react-router-dom";
+import EditGame from "./Components/Game/EditGame";
+import Game from "./Components/Game/Game";
+import Header from "./Components/Common/Header";
+import Home from "./Components/Layout/Home";
+import Footer from "./Components/Common/Footer";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="">
+          <Header />
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/edit-game/:id" element={<EditGame />} />
+            <Route path="/game/:id" element={<Game />} />
+            <Route path="/create-game" element={<CreateGame />} />
+            <Route path="/show-game" element={<ShowGame />} />
+          </Routes>
+
+          <Footer />
+        </div>
       </header>
     </div>
   );
