@@ -28,8 +28,8 @@ const Game = () => {
             <table className="table table-bordered">
                 <thead>
                     <tr>
-                        <th>나야</th>
-                        <th>들기름</th>
+                        <th>오픈소스 스튜디오</th>
+                        <th>웹 서비스 개발</th>
                     </tr>
                 </thead>
                 <tbody>
