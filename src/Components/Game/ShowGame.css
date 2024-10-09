@@ -1,0 +1,50 @@
+/* 전체 게임 리스트 컨테이너 */
+.game-container {
+    padding: 20px;
+    margin: 30px;
+}
+
+/* 카드 리스트의 Flexbox 레이아웃 */
+.game-card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* 각 게임 카드를 위한 스타일 */
+.game-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    color: black;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+}
+
+/* 카드의 제목*/
+.game-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.game-card p {
+    margin: 5px 0;
+}
+
+/* 액션 버튼 스타일 */
+.actions {
+    margin-top: 15px;
+}
+
+.actions i {
+    margin-right: 10px;
+    cursor: pointer;
+}
