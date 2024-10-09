@@ -10,13 +10,13 @@ const EditGame = () => {
     const [isLoading, setIsLoading] = useState(false);
     const { id } = useParams();
     const navigate = useNavigate();
-    const getGameApi = "http://localhost:3000/api/games";
+    const getGameApi = "https://66ff38172b9aac9c997e8ee3.mockapi.io/api/games";
 
     const getGame = useCallback(() => {
         axios
             .get(`${getGameApi}/${id}`)
             .then((item) => {
-                setGame(itme.data);
+                setGame(item.data);
             })
             .catch((err) => {
                 console.log(err);
@@ -97,7 +97,7 @@ const EditGame = () => {
                 </div>
                 <div className="mb-3 mt-3">
                     <label htmlFor="developer" className="form-label">
-                        개발사
+                        제작사
                     </label>
                     <input
                      type="text"
@@ -251,6 +251,9 @@ const EditGame = () => {
                      onChange={handelInput}
                     />
                 </div>
+                <button type="submit" className="btn btn-primary submit-btn">
+                    EDIT
+                </button>
             </form>
         </div>
     );
