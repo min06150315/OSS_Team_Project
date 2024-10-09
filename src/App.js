@@ -6,7 +6,7 @@ import EditGame from "./Components/Game/EditGame";
 import Game from "./Components/Game/Game";
 import Header from "./Components/Common/Header";
 import Home from "./Components/Layout/Home";
-import Footer from "./Components/Common/Footer";
+import Footer from './Components/Common/Footer';
 
 function App() {
   return (
@@ -22,8 +22,6 @@ function App() {
             <Route path="/create-game" element={<CreateGame />} />
             <Route path="/show-game" element={<ShowGame />} />
           </Routes>
-
-          <Footer />
         </div>
       </header>
     </div>
