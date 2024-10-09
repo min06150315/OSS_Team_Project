@@ -2,6 +2,8 @@
 
 ### Simple Service App with React & Open API
 
+Link -> https://mins-oss-team-project.netlify.app/
+
 민경빈 (22300265) & 민태홍 (22300266)
 <hr>
 npm install react-router-dom<br>
