@@ -4,6 +4,9 @@
 
 민경빈 (22300265) & 민태홍 (22300266)
 <hr>
+npm install react-router-dom<br>
+npm install axios<br>
+json-server --watch db.json<br>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
