@@ -39,5 +39,5 @@ export default function Header() {
                 </div>
             </nav>
         </div>
-    )
+    );
 }
