@@ -1,0 +1,52 @@
+/* Header.js 스타일 정의 */
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: #f8f9fa;
+  color: #333;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+
+/* Loader.js 스타일 정의 */
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* Navbar.js 스타일 정의 */
+
+.navbar {
+  width: 250px; /* 네비게이션 바의 너비 */
+  height: 100vh; /* 화면 전체 높이 */
+  background-color: #1E90FF; /* 푸른색 */
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 15px 0;
+  font-size: 18px;
+}

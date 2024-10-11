@@ -1,0 +1,40 @@
+.game-container {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+}
+
+.game-card-list {
+    display: flex; /* 수평 방향으로 정렬 */
+    flex-wrap: wrap; /* 카드가 넘칠 경우 다음 줄로 이동 */
+    justify-content: space-around; /* 카드 간격 조절 */
+    max-width: 1200px; /* 최대 너비 설정 */
+}
+
+.game-card {
+    width: calc(33.333% - 20px); /* 3개씩 배치하기 위한 너비 조정 */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 10px; /* 카드 간격 */
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* 패딩과 마진을 포함한 너비 계산 */
+}
+
+.game-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.actions {
+    margin-top: 10px;
+}
+
+.actions i {
+    margin: 0 10px;
+    cursor: pointer;
+    color: #1DA7CB;
+}
