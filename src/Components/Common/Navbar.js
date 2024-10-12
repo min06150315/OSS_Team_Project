@@ -1,25 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Common.css';
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary flex-column" style={{ height: '100vh' }}>
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">Brand</a>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav flex-column">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Dashboard</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Games</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Settings</a>
-            </li>
-          </ul>
+    <nav className="custom-navbar">
+      <ul className="navbar-nav">
+        <li className='nav-item'>
+          <Link to="/" className="navbar-brand nav-title" href="#">OSS Team Project</Link>
+        </li>
+        <div className='nav-content'>
+          <li className="nav-item"> 
+            <Link className="nav-link" to="create-game">Create Game</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="view-table">View Table</Link>
+          </li>
         </div>
-      </div>
+      </ul>
     </nav>
   );
 };
