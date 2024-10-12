@@ -8,6 +8,7 @@ Link -> https://mins-oss-team-project.netlify.app/
 <hr>
 npm install react-router-dom<br>
 npm install axios<br>
+ npm install @mui/material @emotion/react @emotion/styled @mui/icons-material<br>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
