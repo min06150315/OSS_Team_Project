@@ -7,25 +7,36 @@ import Header from "./Components/Common/Header";
 import Home from "./Components/Layout/Home";
 import Navbar from './Components/Common/Navbar';
 import ViewTable from './Components/Game/ViewTable';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
+
   return (
-    <div className='container'>
+    <div className='custom-container'>
       <div className='left-container'>
-        <div className='navbar-div'><Navbar /></div>
+        <div className='navbar-div'>
+          <Navbar />
+        </div>
       </div>
 
       <div className='right-container'>
-        <div className='header-div'><Header /></div>
+        <div className='header-div'>
+          <Header onSearch={handleSearch} /> {/* 검색 기능 전달 */}
+        </div>
 
-        {/* 페이지 변경을 위해 Routes 사용 */}
         <div className="content-div">
           <Routes>
-            <Route path="/" element={<Home />} /> {/* 메인 페이지 */}
-            <Route path="/edit-game/:id" element={<EditGame />} /> {/* 게임 수정 페이지 */}
-            <Route path="/game/:id" element={<Game />} /> {/* 게임 세부정보 페이지 */}
-            <Route path="/create-game" element={<CreateGame />} /> {/* 게임 생성 페이지 */}
-            <Route path="/view-table" element={<ViewTable />} /> {/* 테이블 보기 */}
+            <Route path="/" element={<Home searchTerm={searchTerm} />} /> {/* 메인 페이지 */}
+            <Route path="/edit-game/:id" element={<EditGame />} />
+            <Route path="/game/:id" element={<Game />} />
+            <Route path="/create-game" element={<CreateGame />} />
+            <Route path="/view-table" element={<ViewTable />} />
           </Routes>
         </div>
       </div>
