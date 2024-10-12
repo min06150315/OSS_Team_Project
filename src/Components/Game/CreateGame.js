@@ -140,7 +140,7 @@ const CreateGame = () => {
                         <option value={false}>No</option>
                     </select>
                 </div>
-                <button type="submit" className="btn btn-primary mb-5">
+                <button type="submit" className="btn btn-primary mt-5">
                     CREATE
                 </button>
             </form>
