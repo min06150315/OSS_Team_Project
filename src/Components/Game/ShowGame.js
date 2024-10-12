@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 import Loader from "../Common/Loader";
 import "./ShowGame.css";
 
-// RAWG에서 Open API 가져오기
 const API_KEY = '6745f210f63247ea92fb562f8dea3ed6';
 const BASE_URL = 'https://api.rawg.io/api';
 
-const ShowGame = () => {
+const ShowGame = ({ searchTerm }) => {
     const showGameApi = "https://66ff38172b9aac9c997e8ee3.mockapi.io/api/games"; // mockAPI
-    const [game, setGame] = useState([]);  // 게임 데이터를 저장하는 상태
+    const [game, setGame] = useState([]); // 게임 데이터를 저장하는 상태
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [filteredGames, setFilteredGames] = useState([]); // 필터링된 게임 리스트 상태
 
     const handleDelete = async (id) => {
         console.log("Deleting game with ID:", id);
@@ -36,6 +36,17 @@ const ShowGame = () => {
         getGames();
     }, []);
 
+    useEffect(() => {
+        setFilteredGames(game); // 처음에는 모든 게임을 필터링 리스트에 설정
+    }, [game]);
+
+    useEffect(() => {
+        const filtered = game.filter((g) =>
+            g.gameName.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredGames(filtered); // 검색어에 따라 필터링된 게임 리스트 업데이트
+    }, [searchTerm, game]);
+
     const getGames = async () => {
         setIsLoading(true); // 데이터를 가져오는 동안 로딩 상태로 설정
         try {
@@ -51,10 +62,10 @@ const ShowGame = () => {
                             search: game.gameName,
                         },
                     });
-                    const rawgGame = response.data.results[0];  // 첫 번째 검색 결과 가져오기
+                    const rawgGame = response.data.results[0]; // 첫 번째 검색 결과 가져오기
                     return {
                         ...game,
-                        image: rawgGame?.background_image || '',  // 이미지 추가
+                        image: rawgGame?.background_image || '', // 이미지 추가
                     };
                 })
             );
@@ -71,7 +82,7 @@ const ShowGame = () => {
         return <Loader />; // 로딩 중일 때 Loader 컴포넌트를 렌더링
     }
 
-    if (game.length === 0 && !isLoading) {
+    if (filteredGames.length === 0 && !isLoading) {
         return <h1>No game found</h1>;
     }
 
@@ -79,7 +90,7 @@ const ShowGame = () => {
         <div className="game-container mb-3 mt-3">
             {error && <p>Error: {error}</p>}
             <div className="game-card-list">
-                {game?.map((item, i) => (
+                {filteredGames?.map((item, i) => (
                     <div className="game-card" key={i}>
                         {item.image && (
                             <img src={item.image} alt={item.gameName} className="game-image" />
@@ -92,12 +103,11 @@ const ShowGame = () => {
                             <Link to={`/game/${item.id}`}>
                                 <i className="fa-solid fa-circle-info"></i>
                             </Link>
-
-                                <i
-                                    className="fa-solid fa-trash"
-                                    aria-hidden="true"
-                                    onClick={() => handleDelete(item.id)}
-                                />
+                            <i
+                                className="fa-solid fa-trash"
+                                aria-hidden="true"
+                                onClick={() => handleDelete(item.id)}
+                            />
                         </div>
                     </div>
                 ))}
