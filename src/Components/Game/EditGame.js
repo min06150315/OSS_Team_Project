@@ -251,7 +251,7 @@ const EditGame = () => {
                      onChange={handelInput}
                     />
                 </div>
-                <button type="submit" className="btn btn-primary submit-btn mb-5">
+                <button type="submit" className="btn btn-primary">
                     UPDATE
                 </button>
             </form>
