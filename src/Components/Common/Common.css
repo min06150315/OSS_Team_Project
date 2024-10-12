@@ -7,14 +7,14 @@
   display: flex;
   align-items: center;
   padding-left: 20px;
-  border: 0px 0px 0px 1px solid black;
+  border: 0 0 0 1px solid black;
 }
+
 .header input {
   width: 40%;
   margin: 10px;
   padding: 5px;
 }
-
 
 /* Loader.js 스타일 정의 */
 .loader {
@@ -23,69 +23,79 @@
   border-top: 16px solid #3498db;
   width: 120px;
   height: 120px;
-  -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-@-webkit-keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
 
 /* Navbar.js 스타일 정의 */
 .navbar {
-  width: 250px; /* 네비게이션 바의 너비 */
-  height: 100vh; /* 화면 전체 높이 */
+  width: 250px; /* 기본 너비 */
+  max-width: 100%; /* 최대 너비를 화면 너비에 맞춤 */
+  height: auto; /* 높이를 자동으로 조정 */
   background-color: #1E90FF; /* 푸른색 */
   padding: 20px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 정렬 */
+  position: fixed; /* 스크롤 시 고정 */
+  top: 0; /* 화면 상단에 고정 */
+  left: 0; /* 왼쪽에 고정 */
+  height: 100%; /* 전체 높이 */
+  z-index: 1000; /* 다른 요소 위에 표시되도록 z-index 설정 */
 }
+
+
 
 .navbar-nav {
   list-style-type: none;
+  padding: 0; /* 기본 여백 제거 */
+  margin: 0; /* 기본 여백 제거 */
 }
 
 .nav-title {
-  font-size: 200%;       /* 글자 크기 */
-  font-weight: bold;     /* 굵기 */
-  color: #ffffff;        /* 글자 색상 */
+  font-size: 1.25rem !important; /* 글자 크기를 더 크게 조정 */
+  font-weight: bold; /* 굵기 */
+  color: #ffffff; /* 글자 색상 */
   text-transform: uppercase; /* 모든 글자를 대문자로 변환 */
   text-decoration: none;
 }
 
+
 .nav-link {
-  font-size: 18px;       /* 글자 크기 */
-  color: #bae0ef;        /* 글자 색상 */
-  font-weight: 500;      /* 중간 굵기 */
+  font-size: 1rem; /* 글자 크기 */
+  color: #bae0ef; /* 글자 색상 */
+  font-weight: 500; /* 중간 굵기 */
   text-decoration: none;
+  margin: 10px 0; /* 카드 간격 */
 }
 
 .nav-link:hover {
   color: #ffffff;
 }
 
-.nav-content {
-  
-}
-
 /* 기존 Bootstrap 스타일을 덮어쓰는 custom-navbar 클래스 */
 .custom-navbar {
-  background-color: #1E90FF !important; /* 푸른색 배경 */
-  padding: 10px !important;
+  position: fixed; /* 스크롤 시 고정 */
+  top: 0; /* 화면 상단에 고정 */
+  left: 0; /* 왼쪽에 고정 */
+  width: 250px; /* 너비 조정 */
+  height: 100%; /* 전체 높이 */
+  background-color: #1E90FF; /* 배경색 */
+  z-index: 1000; /* 다른 요소 위에 표시되도록 설정 */
+  padding: 20px; /* 내부 여백 */
 }
+
 
 .custom-navbar .nav-title {
   color: white !important;
-  font-size: 1.5rem;
 }
 
 .custom-navbar .nav-link {
   color: white !important;
-  text-decoration: none !important;
 }
 
 .custom-navbar .nav-link:hover {
@@ -99,4 +109,33 @@
 
 .custom-navbar .nav-item {
   margin-bottom: 10px;
+}
+
+/* 반응형 디자인을 위한 media query */
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%; /* 화면 크기에 따라 너비를 100%로 조정 */
+  }
+
+  .nav-title {
+    font-size: 1.5rem; /* 글자 크기 조정 */
+  }
+
+  .nav-link {
+    font-size: 0.9rem; /* 글자 크기 조정 */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px; /* 패딩 조정 */
+  }
+
+  .nav-title {
+    font-size: 1.3rem; /* 글자 크기 조정 */
+  }
+
+  .nav-link {
+    font-size: 0.8rem; /* 글자 크기 조정 */
+  }
 }
