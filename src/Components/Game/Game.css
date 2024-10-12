@@ -19,13 +19,6 @@
     font-weight: 600;
     font-size: 18px;
 }
-.submit-btn{
-    border-radius: 0px;
-    width: 100%;
-    margin-top: 15px;
-    background-color: #000;
-    border: 0px !important;
-}
 .heading{
     padding: 0px 0px 15px 0px;
     text-align: center;
