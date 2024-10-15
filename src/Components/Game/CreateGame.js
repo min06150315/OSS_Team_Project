@@ -22,7 +22,7 @@ const CreateGame = () => {
         ageRating: "",
         downloadSize: "",
         systemRequirements: "",
-        hasDLC: false
+        hasDLC: ""
     });
 
     const handelInput = (event) => {
