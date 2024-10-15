@@ -39,7 +39,7 @@ Link -> https://mins-oss-team-project.netlify.app/
 <ol>
 <li>전체적인 페이지의 스타일 개선</li>
 <li>다양한 디스플레이에서 페이지가 호환될 수 있도록 개선</li>
-<li>다른 Open API를 활용하여 특정 게임의 인기가 높은 지역을 지도 형식으로 시각 화하여 보여주는 기능</li>
+<li>다른 Open API를 활용하여 특정 게임의 인기가 높은 지역을 지도 형식으로 시각화하여 보여주는 기능</li>
 </ol>
 
 <hr>
