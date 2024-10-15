@@ -59,7 +59,7 @@ const CreateGame = () => {
                     ageRating: "",
                     downloadSize: "",
                     systemRequirements: "",
-                    hasDLC: false
+                    hasDLC: ""
                 });
                 navigate('/');  // main 페이지로 이동
             } else {
@@ -122,8 +122,16 @@ const CreateGame = () => {
                     <input type="text" className="form-control" id="supportedLanguages" name="supportedLanguages" value={game.supportedLanguages} onChange={handelInput} />
                 </div>
                 <div className="mb-3 mt-3">
-                    <label htmlFor="ageRating" className="form-label">연령 등급</label>
-                    <input type="text" className="form-control" id="ageRating" name="ageRating" value={game.ageRating} onChange={handelInput} />
+                <label htmlFor="ageRating" className="form-label">연령 등급</label>
+                <select className="form-control" id="ageRating" name="ageRating" value={game.ageRating} onChange={handelInput}>
+                    <option value="" disabled selected>등급을 선택하세요</option> {/* placeholder 역할을 사용하기 위해서 disabled selected를 사용하여 기능 구현 */}
+                    <option value="EC">EC (Early Childhood)</option>
+                    <option value="E">E (Everyone)</option>
+                    <option value="E10+">E10+ (Everyone 10+)</option>
+                    <option value="T">T (Teen)</option>
+                    <option value="M">M (Mature 17+)</option>
+                    <option value="AO">AO (Adults Only 18+)</option>
+                </select>
                 </div>
                 <div className="mb-3 mt-3">
                     <label htmlFor="downloadSize" className="form-label">다운로드 크기</label>
@@ -136,6 +144,7 @@ const CreateGame = () => {
                 <div className="mb-3">
                     <label htmlFor="hasDLC" className="form-label">DLC 여부</label>
                     <select className="form-control" id="hasDLC" name="hasDLC" value={game.hasDLC} onChange={handelInput}>
+                        <option value="" disabled selected>DLC 여부를 선택하세요</option> {/* placeholder 역할을 사용하기 위해서 disabled selected를 사용하여 기능 구현 */}
                         <option value={true}>Yes</option>
                         <option value={false}>No</option>
                     </select>
