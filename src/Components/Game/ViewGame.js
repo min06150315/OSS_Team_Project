@@ -51,7 +51,7 @@ const ViewGame = () => {
                     </tr>
                     <tr>
                         <td>플랫폼</td>
-                        <td>{game.platform}</td>
+                        <td>{game.platform && game.platform.join(', ')}</td> {/* 배열을 문자열로 출력할 때 쉼표로 연결 */}
                     </tr>
                     <tr>
                         <td>평점</td>
@@ -71,7 +71,7 @@ const ViewGame = () => {
                     </tr>
                     <tr>
                         <td>지원 언어</td>
-                        <td>{game.supportedLanguages}</td>
+                        <td>{game.supportedLanguages && game.supportedLanguages.join(', ')}</td> {/* 배열을 문자열로 출력할 때 쉼표로 연결 */}
                     </tr>
                     <tr>
                         <td>연령 등급</td>
@@ -87,7 +87,7 @@ const ViewGame = () => {
                     </tr>
                     <tr>
                         <td>DLC 여부</td>
-                        <td>{game.hasDLC}</td>
+                        <td>{game.hasDLC ? "Yes" : "No"}</td> {/* boolean 타입인 hasDLC가 출력이 안되서 String인 Yes/No 로 변환하여 출력 */}
                     </tr>
                 </tbody>
             </table>
