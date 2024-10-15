@@ -3,7 +3,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import "./Game.css";
 
-const Game = () => {
+const ViewGame = () => {
     const [game, setGame] = useState({});
     const { id } = useParams();
     const getGameApi = "https://66ff38172b9aac9c997e8ee3.mockapi.io/api/games";
@@ -95,4 +95,4 @@ const Game = () => {
     )
 };
 
-export default Game;
+export default ViewGame;

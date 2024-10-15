@@ -100,7 +100,7 @@ const ShowGame = ({ searchTerm }) => {
                             <Link to={`/edit-game/${item.id}`}>
                                 <i className="fa-solid fa-pen-to-square" aria-hidden="true"></i>
                             </Link>
-                            <Link to={`/game/${item.id}`}>
+                            <Link to={`/view-game/${item.id}`}>
                                 <i className="fa-solid fa-circle-info"></i>
                             </Link>
                             <i

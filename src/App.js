@@ -2,7 +2,7 @@ import './App.css';
 import CreateGame from "./Components/Game/CreateGame";
 import { Route, Routes } from "react-router-dom";
 import EditGame from "./Components/Game/EditGame";
-import Game from "./Components/Game/Game";
+import ViewGame from "./Components/Game/ViewGame";
 import Header from "./Components/Common/Header";
 import Home from "./Components/Layout/Home";
 import Navbar from './Components/Common/Navbar';
@@ -34,7 +34,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home searchTerm={searchTerm} />} /> {/* 메인 페이지 */}
             <Route path="/edit-game/:id" element={<EditGame />} />
-            <Route path="/game/:id" element={<Game />} />
+            <Route path="/view-game/:id" element={<ViewGame />} />
             <Route path="/create-game" element={<CreateGame />} />
             <Route path="/view-table" element={<ViewTable />} />
           </Routes>
