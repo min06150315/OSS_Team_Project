@@ -241,15 +241,11 @@ const EditGame = () => {
                 <div className="mb-3">
                     <label htmlFor="hasDLC" className="form-label">
                         DLC 여부
-                    </label>
-                    <input
-                     type="text"
-                     className="form-control"
-                     id="hasDLC"
-                     name="hasDLC"
-                     value={game.hasDLC || ''}
-                     onChange={handelInput}
-                    />
+                        </label>
+                    <select className="form-control" id="hasDLC" name="hasDLC" value={game.hasDLC || ''} onChange={handelInput}>
+                        <option value={true}>Yes</option>
+                        <option value={false}>No</option>
+                    </select>
                 </div>
                 <button type="submit" className="btn btn-primary">
                     UPDATE
