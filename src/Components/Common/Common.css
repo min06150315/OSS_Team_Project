@@ -24,6 +24,11 @@
   width: 120px; /* 너비 설정 */
   height: 120px; /* 높이 설정 */
   animation: spin 2s linear infinite; /* 애니메이션 적용 */
+  /* 화면 중앙 정렬을 위한 추가 스타일 */
+  position: fixed; /* 화면에 고정 */
+  top: 50%; /* 수직으로 중앙 */
+  left: 50%; /* 수평으로 중앙 */
+  transform: translate(-50%, -50%); /* 중앙에서 정확히 맞추기 위한 변환 */
 }
 
 @keyframes spin {
@@ -68,6 +73,7 @@
   font-weight: 500; /* 중간 굵기 설정 */
   text-decoration: none; /* 밑줄 제거 */
   margin: 10px 0; /* 카드 간격 설정 */
+  
 }
 
 .nav-link:hover {

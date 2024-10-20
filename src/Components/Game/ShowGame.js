@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"; // 게임 수정 및 상세보기 링�
 import Loader from "../Common/Loader"; // 로딩 상태에서 사용할 Loader 컴포넌트 가져오기
 import "./ShowGame.css";
 
-const API_KEY = '6745f210f63247ea92fb562f8dea3ed6'; // RAWG API 키
+const API_KEY = 'eb0fc6b70d9c4a3a926b7b7151c63b98'; // RAWG API 키
 const BASE_URL = 'https://api.rawg.io/api'; // RAWG API의 기본 URL
 
 const ShowGame = ({ searchTerm }) => {
@@ -57,7 +57,6 @@ const ShowGame = ({ searchTerm }) => {
         try {
             const res = await axios.get(showGameApi); // API 호출
             const gamesData = res.data; // 가져온 데이터 저장
-
             // RAWG API에서 각 게임의 이미지 데이터를 가져옴
             const gameDataWithImages = await Promise.all(
                 gamesData.map(async (game) => {
@@ -76,8 +75,7 @@ const ShowGame = ({ searchTerm }) => {
             );
             setGame(gameDataWithImages); // 이미지가 추가된 게임 데이터를 상태에 저장
         } catch (error) {
-            console.log(error);
-            setError("Failed to fetch games."); // 오류 발생 시 에러 메시지 설정
+            console.log(error); // 오류 발생 시 에러 메시지 설정
         } finally {
             setIsLoading(false); // 데이터 로드가 완료되면 로딩 상태 해제
         }

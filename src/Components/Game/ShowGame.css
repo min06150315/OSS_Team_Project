@@ -28,11 +28,21 @@
     box-sizing: border-box; /* 패딩과 마진을 포함한 너비 계산 */
     background-color: #FFFFFF; /* 배경색 흰색 */
     transition: transform 0.2s; /* 호버 효과를 위한 트랜지션 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 아이콘과 이름 사이 공간 분배 */
 }
 
 /* 게임 카드 호버 효과 설정 */
 .game-card:hover {
     transform: scale(1.05); /* 카드에 마우스를 올렸을 때 확대 효과 */
+}
+
+/* 게임 이름의 최소 높이 설정 (한 줄일 경우 아이콘 위치를 고정하기 위해) */
+.game-card h2 {
+    min-height: 3rem; /* 두 줄의 게임 이름을 고려한 최소 높이 */
+    text-align: center;
+    margin-top: 1rem; /* 게임 이미지와 이름 사이에 여백 추가 */
 }
 
 /* 게임 이미지 스타일 설정 */
@@ -45,14 +55,18 @@
 
 /* 액션 버튼 스타일 설정 */
 .actions {
-    margin-top: 10px; /* 상단 여백 설정 */
+    margin-top: auto; /* 아이콘을 항상 아래쪽에 배치 */
+    display: flex;
+    justify-content: center; /* 아이콘을 가운데로 정렬 */
+    gap: 10px; /* 아이콘 간의 간격 설정 */
 }
 
 /* 액션 아이콘 스타일 설정 */
 .actions i {
-    margin: 0 10px; /* 좌우 간격 설정 */
+    margin: 0 5px; /* 아이콘 간의 좌우 간격 설정 */
     cursor: pointer; /* 커서 포인터로 변경 */
     color: #1E90FF; /* 아이콘 색상 설정 */
+    font-size: 1.5rem; /* 아이콘 크기 설정 */
 }
 
 /* 반응형 디자인을 위한 미디어 쿼리 */
